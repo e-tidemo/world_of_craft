@@ -111,7 +111,7 @@ INSTALLED_APPS = [
     'crafts_panel',
     'crafts_contact',
 ]
-
+SITE_ID = 1
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
