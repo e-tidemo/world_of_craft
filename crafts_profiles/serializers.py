@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Profile
-#from crafts_followers.models import Followers
-#from crafts_posts.serializers import PostSerializer
+from crafts_followers.models import Followers
+from crafts_posts.serializers import PostSerializer
 from .validators import username_validator
 
 class ProfileSerializer(serializers.ModelSerializer):
@@ -11,13 +11,13 @@ class ProfileSerializer(serializers.ModelSerializer):
     posts_count = serializers.ReadOnlyField()
     follower_count = serializers.ReadOnlyField()
     following_count = serializers.ReadOnlyField()
-    #posts = PostSerializer(many=True, read_only=True)
+    posts = PostSerializer(many=True, read_only=True)
 
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
 
-    #def get_following_id(self, obj):
+    def get_following_id(self, obj):
         user = self.context.get('request').user
         if user.is_authenticated:
             following = Followers.objects.filter(
