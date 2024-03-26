@@ -78,7 +78,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://world-of-craft-0e06bf8581a1.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'world-of-craft-670e0fb14b24.herokuapp.com']
 
 
 # Application definition
