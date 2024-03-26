@@ -158,6 +158,7 @@ WSGI_APPLICATION = 'drf_api.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+"""
 if 'DEV' in os.environ:
     DATABASES = {
     'default': {
@@ -170,6 +171,7 @@ else:
          'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
     print('connected')
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
